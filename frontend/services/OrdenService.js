@@ -5,9 +5,9 @@ angular.module('ordenesApp').service('OrdenService', function($http) { // Servic
     return $http.get(baseUrl);
   };
 
-this.getPaginadas = function(limit, offset) { // Obtener órdenes paginadas
-  return $http.get(baseUrl + '?limit=' + limit + '&offset=' + offset);
-};
+  this.getPaginadas = function(limit, offset) { // Obtener órdenes paginadas
+    return $http.get(baseUrl + '?limit=' + limit + '&offset=' + offset);
+  };
 
   this.getUna = function(id) { // Obtener una orden específica por ID
     return $http.get(baseUrl + '/' + id);
