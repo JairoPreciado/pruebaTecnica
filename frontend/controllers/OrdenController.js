@@ -91,6 +91,16 @@ angular.module('ordenesApp').controller('OrdenController', function($scope, Orde
   // Editar una orden existente
   $scope.editarOrden = function(orden) {
     $scope.formulario = angular.copy(orden);
+     
+    if ($scope.formulario.fecha_estimada) {
+      const parts = $scope.formulario.fecha_estimada.split('-');
+      const year = parseInt(parts[0], 10);
+      const month = parseInt(parts[1], 10) - 1; // Meses en JS van de 0 a 11
+      const day = parseInt(parts[2], 10);
+
+      $scope.formulario.fecha_estimada = new Date(year, month, day);
+    }
+
     $scope.mostrarFormulario = true;
     $scope.esEditar = true;
   };
@@ -104,9 +114,9 @@ angular.module('ordenesApp').controller('OrdenController', function($scope, Orde
 
   // Guardar nueva orden o actualizar
   $scope.guardarOrden = function() {
-  if ($scope.formulario.fecha_estimada instanceof Date) {
-    $scope.formulario.fecha_estimada = $scope.formulario.fecha_estimada.toISOString().substring(0, 10);
-  }
+    if ($scope.formulario.fecha_estimada instanceof Date) {
+      $scope.formulario.fecha_estimada = $scope.formulario.fecha_estimada.toISOString().substring(0, 10);
+    }
     
     if ($scope.esEditar) {
       OrdenService.actualizar($scope.formulario.id, $scope.formulario).then(function(res) {
