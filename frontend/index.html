@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="ordenesApp">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Gestión de Órdenes</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap 5 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+
+  <!-- AngularJS 1.8 -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.11/angular.min.js"></script>
+
+  <!-- App scripts -->
+  <script src="app.js"></script>
+  <script src="controllers/OrdenController.js"></script>
+  <script src="services/OrdenService.js"></script>
+</head>
+
+<body ng-controller="OrdenController">
+
+  <div class="container py-4">
+    <h1 class="text-center mb-4">Gestión de órdenes de trabajo</h1>
+
+    <!-- Botón para generar ordenes nuevas y barra de busqueda -->
+    <div class="row mb-3">
+      <div class="col-md-6">
+        <input type="text" class="form-control" placeholder="Buscar orden (ejemplo: cliente:jairo, id:1)" ng-model="busqueda">
+      </div>
+      
+      <div class="col-md-6 text-end">
+        <button class="btn btn-primary" ng-click="nuevaOrden()">Nueva Orden</button>
+      </div>
+    </div>
+
+    <!-- Tabla de órdenes -->
+    <div class="table-responsive">
+      <table class="table table-bordered table-hover align-middle">
+
+        <thead class="table-light">
+          <tr>
+            <th>ID</th>
+            <th>Cliente</th>
+            <th>Descripción</th>
+            <th>Estado</th>
+            <th>Prioridad</th>
+            <th>Fecha_Estimada</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        
+        <tbody>
+          <tr ng-repeat="orden in ordenesFiltradas.slice((paginaActual - 1) * registrosPorPagina, paginaActual * registrosPorPagina)">
+            <td>{{ orden.id }}</td>
+            <td>{{ orden.cliente }}</td>
+            <td>{{ orden.descripcion }}</td>
+            <td>{{ orden.estado }}</td>
+            <td>{{ orden.prioridad }}</td>
+            <td>{{ orden.fecha_estimada }}</td>
+            <td>
+              <button class="btn btn-sm btn-warning me-2" ng-click="editarOrden(orden)">Editar</button>
+              <button class="btn btn-sm btn-danger" ng-click="eliminarOrden(orden.id)">Eliminar</button>
+            </td>
+          </tr>
+        </tbody>
+
+      </table>
+    </div>
+
+    <!-- Paginación -->
+    <div class="text-left my-3">
+      <button class="btn btn-secondary" ng-click="paginaAnterior()" ng-disabled="paginaActual === 1">
+        Anterior
+      </button>
+
+      <span class="mx-2">Página {{paginaActual}} de {{totalPaginas}}</span>
+
+      <button class="btn btn-secondary" ng-click="siguientePagina()" ng-disabled="paginaActual >= totalPaginas">
+        Siguiente
+      </button>
+    </div>
+
+    <!-- Formulario (se muestra unicamente al crear o editar alguna orden ya existente) -->
+    <div class="card mt-4" ng-if="mostrarFormulario">
+      <div class="card-body">
+        <h5 class="card-title">{{ esEditar ? 'Editar Orden' : 'Nueva Orden' }}</h5>
+
+        <form name="ordenForm" ng-submit="guardarOrden()">
+          <div class="mb-3">
+            <label for="cliente" class="form-label">Cliente</label>
+            <input type="text" class="form-control" id="cliente" ng-model="formulario.cliente" required>
+          </div>
+
+          <div class="mb-3">
+            <label for="descripcion" class="form-label">Descripción</label>
+            <textarea class="form-control" id="descripcion" ng-model="formulario.descripcion" required></textarea>
+          </div>
+
+          <div class="mb-3">
+            <label for="estado" class="form-label">Estado</label>
+            <select class="form-select" id="estado" ng-model="formulario.estado" required>
+              <option value="Pendiente">Pendiente</option>
+              <option value="En proceso">En proceso</option>
+              <option value="Completado">Completado</option>
+            </select>
+          </div>
+
+          <div class="mb-3">
+            <label for="prioridad" class="form-label">Prioridad</label>
+            <select class="form-select" id="prioridad" ng-model="formulario.prioridad" required>
+              <option value="Baja">Baja</option>
+              <option value="Media">Media</option>
+              <option value="Alta">Alta</option>
+            </select>
+          </div>
+
+          <div class="mb-3">
+            <label for="fecha_estimada" class="form-label">Fecha Estimada</label>
+            <input type="date" class="form-control" id="fecha_estimada" ng-model="formulario.fecha_estimada" required>
+          </div>
+
+          <div class="text-end">
+            <button type="submit" class="btn btn-success me-2" ng-disabled="ordenForm.$invalid">Guardar</button>
+            <button type="button" class="btn btn-secondary" ng-click="cancelar()">Cancelar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
