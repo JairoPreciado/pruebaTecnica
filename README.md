@@ -59,8 +59,8 @@ Mini-módulo de gestión de órdenes de trabajo con frontend en AngularJS 1.5+ y
 
    * Abre `frontend/index.html` directamente en el navegador
    * O si prefieres, podrias usar la alternativa previamente mencionada "PHP Built-in server" solo que con un numero de puerto distinto
-  
-   ```bash
+   
+     ```bash
      cd frontend
      php -S localhost:8001
      ```
