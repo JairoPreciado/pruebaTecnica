@@ -1,0 +1,57 @@
+[2025-07-12 16:18:54] VALIDACION: Fecha estimada en el pasado: 2025-07-10
+[2025-07-12 16:18:54] ERROR: Datos inválidos al crear orden
+[2025-07-12 16:19:21] INFO: Orden creada para cliente: prueba_7
+[2025-07-12 16:19:37] VALIDACION: Orden duplicada: Cliente=prueba_7 Fecha=2025-07-12
+[2025-07-12 16:19:37] ERROR: Datos inválidos al crear orden
+[2025-07-12 16:19:43] VALIDACION: Orden duplicada: Cliente=prueba_7 Fecha=2025-07-12
+[2025-07-12 16:19:43] ERROR: Datos inválidos al crear orden
+[2025-07-12 16:24:53] INFO: Orden creada para cliente: prueba_8
+[2025-07-12 16:25:00] VALIDACION: Orden duplicada: Cliente=prueba_7 Fecha=2025-07-12
+[2025-07-12 16:25:00] ERROR: Datos inválidos al crear orden
+[2025-07-12 16:25:27] VALIDACION: Orden duplicada: Cliente=prueba_7 Fecha=2025-07-12
+[2025-07-12 16:25:27] ERROR: Datos inválidos al crear orden
+[2025-07-12 16:26:42] VALIDACION: Orden duplicada: Cliente=prueba_7 Fecha=2025-07-12
+[2025-07-12 16:26:42] ERROR: Datos inválidos al actualizar orden ID 14
+[2025-07-12 16:27:20] INFO: Orden ID 14 actualizada correctamente
+[2025-07-12 16:27:29] VALIDACION: Orden duplicada: Cliente=prueba_7 Fecha=2025-07-13
+[2025-07-12 16:27:29] ERROR: Datos inválidos al actualizar orden ID 14
+[2025-07-12 16:27:44] VALIDACION: Orden duplicada: Cliente=prueba_7 Fecha=2025-07-13
+[2025-07-12 16:27:44] ERROR: Datos inválidos al actualizar orden ID 14
+[2025-07-12 16:29:27] INFO: Orden ID 5 actualizada correctamente
+[2025-07-12 16:29:49] VALIDACION: Orden duplicada: Cliente=prueba_1 Fecha=2025-07-12
+[2025-07-12 16:29:49] ERROR: Datos inválidos al actualizar orden ID 5
+[2025-07-12 16:30:03] VALIDACION: Orden duplicada: Cliente=prueba_1 Fecha=2025-07-12
+[2025-07-12 16:30:03] ERROR: Datos inválidos al actualizar orden ID 5
+[2025-07-12 16:30:19] VALIDACION: Orden duplicada: Cliente=prueba_1 Fecha=2025-07-12
+[2025-07-12 16:30:19] ERROR: Datos inválidos al actualizar orden ID 5
+[2025-07-12 16:30:32] INFO: Orden ID 5 actualizada correctamente
+[2025-07-12 16:30:42] INFO: Orden ID 5 actualizada correctamente
+[2025-07-12 16:32:19] VALIDACION: Orden duplicada: Cliente=prueba_1 Fecha=2025-07-12
+[2025-07-12 16:32:19] ERROR: Datos inválidos al actualizar orden ID 5
+[2025-07-12 16:40:34] INFO: Orden ID 14 actualizada correctamente
+[2025-07-12 16:40:50] INFO: Orden ID 14 actualizada correctamente
+[2025-07-12 16:51:54] INFO: Orden ID 14 actualizada correctamente
+[2025-07-12 16:56:37] INFO: Orden ID 10 actualizada correctamente
+[2025-07-12 17:02:21] VALIDACION: Formato de fecha inválido: 2025-07-12T06:00:00.000Z
+[2025-07-12 17:02:21] ERROR: Datos inválidos al actualizar orden ID 14
+[2025-07-12 17:03:28] VALIDACION: Formato de fecha inválido: 2025-07-12T06:00:00.000Z
+[2025-07-12 17:03:28] ERROR: Datos inválidos al actualizar orden ID 14
+[2025-07-12 17:03:39] INFO: Orden ID 14 actualizada correctamente
+[2025-07-12 17:18:11] INFO: Orden ID 13 eliminada correctamente
+[2025-07-12 17:18:21] INFO: Orden ID 14 actualizada correctamente
+[2025-07-12 17:18:46] INFO: Orden creada para cliente: pueba_7
+[2025-07-12 17:27:09] INFO: Orden ID 15 actualizada correctamente
+[2025-07-12 17:27:12] INFO: Orden ID 15 eliminada correctamente
+[2025-07-12 17:27:32] VALIDACION: Fecha estimada en el pasado: 2025-07-10
+[2025-07-12 17:27:32] ERROR: Datos inválidos al crear orden
+[2025-07-12 17:27:36] VALIDACION: Orden duplicada: Cliente=prueba_7 Fecha=2025-07-20
+[2025-07-12 17:27:36] ERROR: Datos inválidos al crear orden
+[2025-07-12 17:28:05] INFO: Orden creada para cliente: prueba_8
+[2025-07-12 17:33:16] INFO: Orden ID 16 actualizada correctamente
+[2025-07-12 17:38:22] INFO: Orden ID 16 actualizada correctamente
+[2025-07-12 17:39:23] VALIDACION: Orden duplicada: Cliente=prueba_8 Fecha=2025-07-19
+[2025-07-12 17:39:23] ERROR: Datos inválidos al crear orden
+[2025-07-12 17:39:28] INFO: Orden creada para cliente: prueba_8
+[2025-07-12 17:39:48] VALIDACION: Fecha estimada en el pasado: 2025-07-11
+[2025-07-12 17:39:48] ERROR: Datos inválidos al actualizar orden ID 17
+[2025-07-12 17:39:53] INFO: Orden ID 17 actualizada correctamente
